@@ -7,7 +7,7 @@ import UserMenu from "./UserMenu";
 import Socials from "./Socials";
 import LinksMenu from "./LinksMenu";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav className="fixed w-full py-2">
       <Container>
@@ -28,3 +28,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default Navbar;

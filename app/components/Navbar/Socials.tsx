@@ -1,8 +1,6 @@
 "use client";
 
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa6";
+import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 interface iconAttributes {
   iconSize: number;
