@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import Avatar from "../Avatar";
-import UserMenuModal from "./Modals/UserMenuModal";
+import UserMenuModal from "./NavbarModals/UserMenuModal";
 
 interface iconAttributes {
   iconSize: number;
@@ -14,16 +14,10 @@ const iconSize = 15;
 export default function UserMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleOpen = useCallback(() => {
-    setIsOpen((value) => !value);
-  }, []);
-
   return (
     <div>
-      <button
-        className="hover:shadow-md flex flex-row items-center px-3 py-1 gap-2 border rounded-full"
-        onClick={toggleOpen}
-      >
+      <button className="hover:shadow-md flex flex-row items-center px-3 py-1 gap-2 border rounded-full"
+        onClick={() => setIsOpen(!isOpen)}>
         <FiMenu size={iconSize} />
         <Avatar />
       </button>
