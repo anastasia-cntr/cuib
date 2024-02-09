@@ -11,7 +11,7 @@ interface iconAttributes {
 
 const iconSize = 15;
 
-export default function UserMenu() {
+const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -25,3 +25,5 @@ export default function UserMenu() {
     </div>
   );
 }
+
+export default UserMenu;

@@ -8,7 +8,7 @@ interface iconAttributes {
 
 const iconSize = 15;
 
-export default function Socials() {
+const Socials = () => {
   return (
     <div className="sm:flex hidden flex-row gap-2 border rounded-full px-2 py-3">
       <div>
@@ -29,3 +29,5 @@ export default function Socials() {
     </div>
   );
 }
+
+export default Socials;

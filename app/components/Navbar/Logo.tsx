@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function Logo() {
+const Logo = () => {
   return (
     <Image alt="Logo" className="hidden md:block cursor-pointer"
-    height="40" width="40" src="/images/logo.svg" />
+      height="40" width="40" src="/images/logo.svg" />
   );
 }
+
+export default Logo;

@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import SearchModal from "./NavbarModals/SearchModal";
 
-export default function LinksMenu() {
+const LinksMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
@@ -23,3 +23,5 @@ export default function LinksMenu() {
     </div>
   );
 }
+
+export default LinksMenu;
