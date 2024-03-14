@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import SearchModal from "./NavbarModals/SearchModal";
+import SearchModal from "@/app/components/Modals/SearchModal";
 
 const LinksMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

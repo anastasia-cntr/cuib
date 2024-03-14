@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
+import SignUpModal from "./components/Modals/SignUpModal";
+import ToasterProvider from "./providers/ToasterProvider";
+import LogInModal from "./components/Modals/LogInModal";
 
 const font = Poppins({
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
@@ -25,6 +28,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToasterProvider />
+        <SignUpModal />
+        <LogInModal />
         <Navbar />
         {children}
       </body>
