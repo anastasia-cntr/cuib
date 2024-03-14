@@ -13,12 +13,14 @@ interface ModalProps {
   footer?: React.ReactElement;
   actionLabel: string;
   disabled?: boolean;
+  btnBgColor?: string;
+  btnTextColor?: string;
   secondaryAction?: () => void;
   secondaryLabel?: string;
 }
 
 const UniversalModal: React.FC<ModalProps> = ({
-  isOpen, onClose, onSubmit, title, body, footer, actionLabel, disabled, secondaryAction, secondaryLabel
+  isOpen, onClose, onSubmit, title, body, footer, actionLabel, disabled, secondaryAction, secondaryLabel, btnBgColor, btnTextColor
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
@@ -83,7 +85,7 @@ const UniversalModal: React.FC<ModalProps> = ({
                   {secondaryAction && secondaryLabel && (
                     <Button disabled={disabled} label={secondaryLabel} onClick={handleSecondaryAction} />
                   )}
-                  <Button disabled={disabled} label={actionLabel} onClick={handleSubmit} />
+                  <Button disabled={disabled} label={actionLabel} onClick={handleSubmit} bgColor={btnBgColor} textColor={btnTextColor} />
                 </div>
                 {footer}
               </footer>

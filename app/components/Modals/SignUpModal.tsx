@@ -59,15 +59,15 @@ const SignUpModal = () => {
   const footerContent = (
     <footer className="flex flex-col gap-4 mt-3">
       <hr />
-      <Button label="Continu&#259; cu Google" outline bgColor='bg-gray-200' textColor='text-gray-500' small icon={FcGoogle} onClick={() => { }} />
-      <Button label="Continu&#259; cu Facebook" outline bgColor='bg-gray-200' textColor='text-gray-500' small icon={FaFacebook}
+      <Button label="Continu&#259; cu Google" outline bgColor='bg-gray-200' textColor='text-black' small icon={FcGoogle} onClick={() => { }} />
+      <Button label="Continu&#259; cu Facebook" outline bgColor='bg-gray-200' textColor='text-black' small icon={FaFacebook}
         onClick={() => { }} />
     </footer>
   )
 
   return (
     <div>
-      <UniversalModal disabled={isLoading} actionLabel="Continuă" title="Înscrie-te" onClose={signUpModal.onClose} isOpen={signUpModal.isOpen} onSubmit={handleSubmit((onSubmit))} body={bodyContent} footer={footerContent} />
+      <UniversalModal disabled={isLoading} actionLabel="Continuă" title="Înscrie-te" onClose={signUpModal.onClose} isOpen={signUpModal.isOpen} onSubmit={handleSubmit((onSubmit))} body={bodyContent} footer={footerContent} btnBgColor='bg-red-500' btnTextColor='text-white' />
     </div>
   );
 }
