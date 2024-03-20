@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar/Navbar";
-import SignUpModal from "./components/Modals/SignUpModal";
+import Navbar from "@ui/Navbar";
+import SignUpModal from "./features/authentication/SignUpModal";
 import ToasterProvider from "./providers/ToasterProvider";
-import LogInModal from "./components/Modals/LogInModal";
+import LogInModal from "@features/authentication/LogInModal";
 
 const font = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

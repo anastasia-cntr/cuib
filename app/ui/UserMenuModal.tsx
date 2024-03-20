@@ -1,8 +1,8 @@
 "use client";
 
-import MenuItem from "../MenuItem";
-import useSignUpModal from "@/app/hooks/useSignUpModal";
-import useLogInModal from "@/app/hooks/useLogInModal";
+import MenuItem from "./MenuItem";
+import useSignUpModal from "@features/authentication/useSignUpModal";
+import useLogInModal from "@features/authentication/useLogInModal";
 
 const UserMenuModal = () => {
   const signUpModal = useSignUpModal();

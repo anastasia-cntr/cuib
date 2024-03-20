@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
-import Avatar from "../Avatar";
-import UserMenuModal from "@/app/components/Modals/UserMenuModal"
+import Avatar from "./Avatar";
+import UserMenuModal from "@/app/ui/UserMenuModal"
 
 interface iconAttributes {
   iconSize: number;

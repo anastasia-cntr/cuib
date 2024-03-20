@@ -7,17 +7,17 @@ import axios from 'axios';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 
-import useSignUpModal from '@/app/hooks/useSignUpModal';
-import useLogInModal from '@/app/hooks/useLogInModal';
-import UniversalModal from './UniversalModal';
-import Heading from '../Heading';
-import Input from '../Inputs/Input';
+import useLogInModal from '@/app/features/authentication/useLogInModal';
+import useSignUpModal from '@/app/features/authentication/useSignUpModal';
+import UniversalModal from '../../ui/UniversalModal';
+import Heading from '../../ui/Heading';
+import Input from '../../ui/Input';
 import { toast } from 'react-hot-toast';
-import Button from '../Button';
+import Button from '../../ui/Button';
 
-const SignUpModal = () => {
-  const signUpModal = useSignUpModal();
+const LogInModal = () => {
   const logInModal = useLogInModal();
+  const signUpModal = useSignUpModal();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, formState: { errors, } } = useForm<FieldValues>({ defaultValues: { name: '', email: '', password: '' } });
 
@@ -27,7 +27,7 @@ const SignUpModal = () => {
     axios
       .post("/api/register", data)
       .then(() => {
-        signUpModal.onClose();
+        logInModal.onClose();
       })
       .catch((error) => {
         toast.error("Error");
@@ -44,14 +44,12 @@ const SignUpModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Bine ai venit în Cuib!" center subtitle="Creează-ți un cont pentru a beneficia de o experiență completă." />
+      <Heading title="Bine ai revenit în Cuib!" center subtitle="Conectează-te la contul tău pentru a beneficia de o experiență completă. " />
       <Input id="email" label="Email" type="email" disabled={isLoading} register={register} errors={errors} required />
-      <Input id="name" label="Nume" disabled={isLoading} register={register} errors={errors} required />
       <Input id="password" label="Parol&#259;" type="password" disabled={isLoading} register={register} errors={errors}
         required />
-      <Input id="confirmPassword" label="Confirm&#259; parola" type="password" disabled={isLoading} register={register} errors={errors} required />
       <section onClick={toggle}>
-        <a className="text-blue-700 underline" href="">Ai deja un cont? Conectează-te!</a>
+        <a className="text-blue-700 underline" href="">Nu ai un cont? Înscrie-te!</a>
       </section>
     </div>
   );
@@ -67,9 +65,9 @@ const SignUpModal = () => {
 
   return (
     <div>
-      <UniversalModal disabled={isLoading} actionLabel="Continuă" title="Înscrie-te" onClose={signUpModal.onClose} isOpen={signUpModal.isOpen} onSubmit={handleSubmit((onSubmit))} body={bodyContent} footer={footerContent} btnBgColor='bg-red-500' btnTextColor='text-white' />
+      <UniversalModal disabled={isLoading} actionLabel="Continuă" title="Conectează-te" onClose={logInModal.onClose} isOpen={logInModal.isOpen} onSubmit={handleSubmit((onSubmit))} body={bodyContent} footer={footerContent} btnBgColor='bg-red-500' btnTextColor='text-white' />
     </div>
   );
 }
 
-export default SignUpModal;
+export default LogInModal;
